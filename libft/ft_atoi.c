@@ -6,13 +6,13 @@
 /*   By: tvillare <tvillare@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/15 17:04:06 by tvillare          #+#    #+#             */
-/*   Updated: 2022/09/20 17:04:30 by tvillare         ###   ########.fr       */
+/*   Updated: 2022/09/29 16:44:33 by tvillare         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	quitar_espacios(const char *str)
+static int	quitar_espacios(const char *str)
 {
 	int	i;
 
@@ -23,17 +23,17 @@ int	quitar_espacios(const char *str)
 	return (i);
 }
 
-int	no_numero(const char *str, int i)
+static int	no_numero(const char *str, int i)
 {
 	while (str[i] >= '0' && str[i] <= '9')
 		i++;
 	return (i);
 }
 
-int	num_final(const char *str, int i, int z, int sig)
+static unsigned long	num_final(const char *str, int i, int z)
 {
-	int	num;
-	int	sub;
+	unsigned long	num;
+	unsigned long	sub;
 
 	sub = 1;
 	num = 0;
@@ -44,39 +44,30 @@ int	num_final(const char *str, int i, int z, int sig)
 		sub = sub * 10;
 		z--;
 	}
-	if (sig == 1)
-		num = num * -1;
 	return (num);
 }
 
 int	ft_atoi(const char *str)
 {
-	int	i;
-	int	signo;
-	int	suma;
-	int	final;
-	int	z;
+	unsigned long	i;
+	int				signo;
+	unsigned long	final;
 
 	i = quitar_espacios(str);
-	suma = 0;
 	signo = 0;
-	while (str[i] == '+' || str[i] == '-')
-	{
-		if (str[i] == '+')
-			suma++;
-		else if (str[i] == '-')
-			signo++;
-		i++;
-	}
-	if ((suma >= 1 && signo >= 1) || (suma > 1) || (signo > 1))
+	if (str[i] == '+' || str[i] == '-')
+		if (str[i++] == '-')
+				signo++;
+	if (ft_isdigit(str[i]) == 0)
 		return (0);
 	if (str[i] < 48 || str[i] > 57)
 		return (0);
-	if (str[i] < 48 || str[i] > 57)
+	final = num_final(str, i, no_numero(str, i));
+	if (final > LONG_MAX && signo == 0)
+		return (-1);
+	else if (final > LONG_MAX && signo == 1)
 		return (0);
-	z = no_numero(str, i);
-	final = num_final(str, i, z, signo);
-	//if (final > 2147483647 || final < -2147483648)
-	//	return (0);
+	if (signo == 1)
+		return (-final);
 	return (final);
 }

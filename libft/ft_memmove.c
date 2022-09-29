@@ -6,13 +6,13 @@
 /*   By: tvillare <tvillare@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/19 12:29:04 by tvillare          #+#    #+#             */
-/*   Updated: 2022/09/20 18:56:36 by tvillare         ###   ########.fr       */
+/*   Updated: 2022/09/28 17:26:43 by tvillare         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdlib.h>
 
-void	*inverso(char *last_d, const char *last_s, size_t len)
+static void	*inverso(char *last_d, const char *last_s, size_t len)
 {
 	char	aux;
 
@@ -27,11 +27,11 @@ void	*inverso(char *last_d, const char *last_s, size_t len)
 
 void	*ft_memmove(void *dst, const void *src, size_t len)
 {
-	if (dst == NULL && src == NULL)
-		return(dst);
 	char		*d;
 	const char	*s;
 
+	if (dst == NULL && src == NULL)
+		return (dst);
 	d = (char *)dst;
 	s = (const char *)src;
 	if (d < s)
