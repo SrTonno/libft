@@ -1,21 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_tolower.c                                       :+:      :+:    :+:   */
+/*   ft_lstadd_front.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tvillare <tvillare@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/09/15 14:50:10 by tvillare          #+#    #+#             */
-/*   Updated: 2022/09/29 18:45:55 by tvillare         ###   ########.fr       */
+/*   Created: 2022/09/30 16:31:14 by tvillare          #+#    #+#             */
+/*   Updated: 2022/09/30 17:02:15 by tvillare         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_tolower(int c)
+void	ft_lstadd_front(t_list **lst, t_list *new)
 {
-	if (c >= 65 && c <= 90)
-		return (c + 32);
-	return (c);
-	
+	if (lst && new)
+	{
+		new->next = *lst;
+		*lst = new;
+	}
 }

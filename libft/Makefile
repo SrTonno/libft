@@ -13,7 +13,10 @@ CFILES		= \
 			ft_putnbr_fd.c ft_itoa.c ft_strmapi.c ft_striteri.c ft_split.c
 OBJS	=	${CFILES:.c=.o}
 
-
+CBONUS =	ft_lstnew.c ft_lstadd_front.c ft_lstsize.c ft_lstlast.c \
+			ft_lstadd_back.c ft_lstdelone.c ft_lstclear.c \
+			ft_lstiter.c ft_lstmap.c
+OBONUS	=	$(CBONUS:.c=.o)
 ###############################################################################
 #                                                                             #
 #                                 SETTINGS                                    #
@@ -32,19 +35,24 @@ RM = rm -f
 #                                  OPTIONS                                    #
 #                                                                             #
 ###############################################################################
-all:	${NAME}
+all:	${NAME} bonus
 
 ${NAME}:	${OBJS}
 		ar rc ${NAME} ${OBJS}
 		ranlib ${NAME}
 
+bonus:		$(OBJS) $(OBONUS)
+		ar rc $(NAME) $(OBONUS) ${OBJS}
+		ranlib $(NAME)
 
 .c.o:
-		${CC} ${CFLAGS} -c $< -o ${<:.c=.o} -I ${HDRS}
+		 ${CC} ${CFLAGS} -c $< -o ${<:.c=.o} -I ${HDRS}
 
 ###############################################################################
 clean:
 		${RM} ${OBJS}
-fclean: clean
+bclean:
+		${RM} ${OBONUS}
+fclean: clean bclean
 		${RM} ${NAME}
 re: fclean all
