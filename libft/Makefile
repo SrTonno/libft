@@ -23,27 +23,27 @@ OBONUS	=	$(CBONUS:.c=.o)
 #                                                                             #
 ###############################################################################
 NAME = libft.a
+
 HDRS = libft.h
 
 CC = gcc
 CFLAGS = -Wall -Werror -Wextra
 
 RM = rm -f
-.PHONY = all clean fclean re bonus
 ###############################################################################
 #                                                                             #
 #                                  OPTIONS                                    #
 #                                                                             #
 ###############################################################################
-all:	${NAME} bonus
+all: ${OBJS} ${NAME}
 
 ${NAME}:	${OBJS}
-		ar rc ${NAME} ${OBJS}
-		ranlib ${NAME}
+		@ar -rcs ${NAME} ${OBJS}
+		@ranlib $(NAME)
 
-bonus:		$(OBJS) $(OBONUS)
-		ar rc $(NAME) $(OBONUS) ${OBJS}
-		ranlib $(NAME)
+bonus: $(OBONUS) $(OBJS)
+			ar -rcs ${NAME} ${OBONUS}
+			ranlib $(NAME)
 
 .c.o:
 		 ${CC} ${CFLAGS} -c $< -o ${<:.c=.o} -I ${HDRS}
@@ -51,8 +51,13 @@ bonus:		$(OBJS) $(OBONUS)
 ###############################################################################
 clean:
 		${RM} ${OBJS}
+
 bclean:
 		${RM} ${OBONUS}
+
 fclean: clean bclean
 		${RM} ${NAME}
+
 re: fclean all
+
+.PHONY = all clean fclean re bonus bclean

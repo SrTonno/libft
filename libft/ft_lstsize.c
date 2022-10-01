@@ -6,13 +6,13 @@
 /*   By: tvillare <tvillare@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/29 19:06:36 by tvillare          #+#    #+#             */
-/*   Updated: 2022/09/30 17:11:54 by tvillare         ###   ########.fr       */
+/*   Updated: 2022/10/01 16:44:19 by tvillare         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int ft_lstsize(t_list *lst)
+int	ft_lstsize(t_list *lst)
 {
 	int	len;
 
@@ -20,8 +20,7 @@ int ft_lstsize(t_list *lst)
 	while (lst != NULL)
 	{
 		len++;
-		lst= lst->next;
+		lst = lst->next;
 	}
 	return (len);
-
 }

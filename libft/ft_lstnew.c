@@ -6,13 +6,13 @@
 /*   By: tvillare <tvillare@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/29 18:12:00 by tvillare          #+#    #+#             */
-/*   Updated: 2022/09/29 18:33:58 by tvillare         ###   ########.fr       */
+/*   Updated: 2022/10/01 16:41:00 by tvillare         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-t_list *ft_lstnew(void *content)
+t_list	*ft_lstnew(void *content)
 {
 	t_list	*pnt;
 
