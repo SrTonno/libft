@@ -6,15 +6,15 @@
 /*   By: tvillare <tvillare@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/13 15:58:41 by tvillare          #+#    #+#             */
-/*   Updated: 2022/09/14 17:15:08 by tvillare         ###   ########.fr       */
+/*   Updated: 2022/10/02 17:28:02 by tvillare         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_isprint(int carac)
+int	ft_isprint(int c)
 {
-	if (32 <= carac && 126 >= carac)
+	if (32 <= c && 126 >= c)
 		return (1);
 	else
 		return (0);

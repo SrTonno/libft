@@ -6,7 +6,7 @@
 /*   By: tvillare <tvillare@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/14 17:39:06 by tvillare          #+#    #+#             */
-/*   Updated: 2022/10/01 19:28:43 by tvillare         ###   ########.fr       */
+/*   Updated: 2022/10/02 17:35:29 by tvillare         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,11 +23,11 @@ typedef struct s_list
 }	t_list;
 
 //////////////////////PARTE 1//////////////////////////////
-int		ft_isalpha(int carac);
-int		ft_isdigit(int carac);
-int		ft_isalnum(int carac);
-int		ft_isascii(int carac);
-int		ft_isprint(int carac);
+int		ft_isalpha(int c);
+int		ft_isdigit(int c);
+int		ft_isalnum(int c);
+int		ft_isascii(int c);
+int		ft_isprint(int c);
 size_t	ft_strlen(const char *s);
 int		ft_toupper(int c);
 int		ft_tolower(int c);
@@ -38,8 +38,8 @@ char	*ft_strchr(const char *s, int c);
 char	*ft_strrchr(const char *s, int c);
 char	*ft_strnstr(const char *haystack, const char *needle, size_t len);
 char	*ft_strdup(const char *s1);
-void	*ft_memset(void *str, int c, size_t n);
-void	ft_bzero(void *str, size_t size);
+void	*ft_memset(void *b, int c, size_t len);
+void	ft_bzero(void *s, size_t n);
 void	*ft_memcpy(void *dest, const void *src, size_t n);
 void	*ft_memchr(const void *s, int c, size_t n);
 void	*ft_calloc(size_t count, size_t size);

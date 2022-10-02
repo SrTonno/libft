@@ -6,7 +6,7 @@
 /*   By: tvillare <tvillare@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/22 13:30:16 by tvillare          #+#    #+#             */
-/*   Updated: 2022/09/28 17:22:43 by tvillare         ###   ########.fr       */
+/*   Updated: 2022/10/02 16:37:39 by tvillare         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,14 +69,3 @@ char	*ft_strtrim(char const *s1, char const *set)
 	ft_strlcpy(pnt, s1 + start, (end - start + 1));
 	return (pnt);
 }
-/*
-#include <stdio.h>
-int main()
-{
-	char *pp;
-	pp = ft_strtrim("aPaHola", "x");
-	printf("%s", pp);
-	return (0);
-}
-
-*/

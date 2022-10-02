@@ -6,7 +6,7 @@
 /*   By: tvillare <tvillare@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/22 17:10:04 by tvillare          #+#    #+#             */
-/*   Updated: 2022/09/28 17:45:46 by tvillare         ###   ########.fr       */
+/*   Updated: 2022/10/02 17:59:19 by tvillare         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,15 +62,3 @@ char	*ft_itoa(int n)
 	pnt = putnum(pnt, n, neg, count);
 	return (pnt);
 }
-/*
-#include <stdio.h>
-#include <stdlib.h>
-
-int	main()
-{
-	char *pp;
-	pp = ft_itoa(-2147483648);
-	printf("/%s/\n", pp);
-	return (0);
-}
-*/

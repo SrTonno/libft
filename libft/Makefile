@@ -13,9 +13,9 @@ CFILES		= \
 			ft_putnbr_fd.c ft_itoa.c ft_strmapi.c ft_striteri.c ft_split.c
 OBJS	=	${CFILES:.c=.o}
 
-CBONUS =	ft_lstnew.c ft_lstadd_front.c ft_lstsize.c ft_lstlast.c \
-			ft_lstadd_back.c ft_lstdelone.c ft_lstclear.c \
-			ft_lstiter.c ft_lstmap.c
+CBONUS =	ft_lstnew_bonus.c ft_lstadd_front_bonus.c ft_lstsize_bonus.c \
+			ft_lstlast_bonus.c ft_lstadd_back_bonus.c ft_lstdelone_bonus.c \
+			ft_lstclear_bonus.c ft_lstiter_bonus.c ft_lstmap_bonus.c
 OBONUS	=	$(CBONUS:.c=.o)
 ###############################################################################
 #                                                                             #
@@ -23,27 +23,33 @@ OBONUS	=	$(CBONUS:.c=.o)
 #                                                                             #
 ###############################################################################
 NAME = libft.a
-
 HDRS = libft.h
 
 CC = gcc
 CFLAGS = -Wall -Werror -Wextra
 
+AR = ar
+ARFLAGS = -rcs
 RM = rm -f
+
+ifdef WITH_BONUS
+	TOTAL_OBJS = $(OBJS) $(OBONUS)
+else
+	TOTAL_OBJS = $(OBJS)
+endif
+
 ###############################################################################
 #                                                                             #
 #                                  OPTIONS                                    #
 #                                                                             #
 ###############################################################################
-all: ${OBJS} ${NAME}
+all: ${NAME}
 
-${NAME}:	${OBJS}
-		@ar -rcs ${NAME} ${OBJS}
-		@ranlib $(NAME)
+bonus :
+	make WITH_BONUS=1
 
-bonus: $(OBONUS) $(OBJS)
-			ar -rcs ${NAME} ${OBONUS}
-			ranlib $(NAME)
+$(NAME): $(TOTAL_OBJS)
+	$(AR) $(ARFLAGS) $@ $^
 
 .c.o:
 		 ${CC} ${CFLAGS} -c $< -o ${<:.c=.o} -I ${HDRS}
@@ -55,7 +61,7 @@ clean:
 bclean:
 		${RM} ${OBONUS}
 
-fclean: clean bclean
+fclean: clean
 		${RM} ${NAME}
 
 re: fclean all

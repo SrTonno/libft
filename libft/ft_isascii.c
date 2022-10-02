@@ -6,15 +6,15 @@
 /*   By: tvillare <tvillare@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/13 15:46:08 by tvillare          #+#    #+#             */
-/*   Updated: 2022/09/14 17:14:58 by tvillare         ###   ########.fr       */
+/*   Updated: 2022/10/02 17:27:14 by tvillare         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_isascii(int carac)
+int	ft_isascii(int c)
 {
-	if (0 <= carac && 127 >= carac)
+	if (0 <= c && 127 >= c)
 		return (1);
 	else
 		return (0);

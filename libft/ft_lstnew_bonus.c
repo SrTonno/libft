@@ -1,27 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_ memchr.c                                       :+:      :+:    :+:   */
+/*   ft_lstnew_bonus.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tvillare <tvillare@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/09/15 16:38:26 by tvillare          #+#    #+#             */
-/*   Updated: 2022/09/15 16:54:14 by tvillare         ###   ########.fr       */
+/*   Created: 2022/09/29 18:12:00 by tvillare          #+#    #+#             */
+/*   Updated: 2022/10/02 17:45:51 by tvillare         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-void *memchr(const void *str, int c, size_t n)
-{
-	int	i;
+#include "libft.h"
 
-	i = 0;
-	while ((str[i] != '\0') || (str[i] != '\n') && (n > i))
-	{
-		if (str[i] == c)
-		{
-			return (str + i);
-		}
-		i++;
-	}
-	return (0);
+t_list	*ft_lstnew(void *content)
+{
+	t_list	*pnt;
+
+	pnt = (t_list *)malloc(sizeof(*pnt));
+	if (!pnt)
+		return (NULL);
+	pnt->content = content;
+	pnt->next = NULL;
+	return (pnt);
 }

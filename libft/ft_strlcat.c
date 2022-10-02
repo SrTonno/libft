@@ -6,7 +6,7 @@
 /*   By: tvillare <tvillare@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/16 15:09:52 by tvillare          #+#    #+#             */
-/*   Updated: 2022/09/28 17:24:35 by tvillare         ###   ########.fr       */
+/*   Updated: 2022/10/02 16:28:37 by tvillare         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,16 +33,3 @@ size_t	ft_strlcat(char *dst, const char *src, size_t dstsize)
 	dst[d + i] = '\0';
 	return (d + s);
 }
-/*
-#include <string.h>
-#include <stdio.h>
-int main()
-{
-	char d[] = "HOLA";
-	char s[] = "ADIOS";
-	size_t a;
-	a = strlcat(d, s, 0);
-	printf("%zu - %s\n", a, d);
-	return(0);
-}
-*/

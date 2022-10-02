@@ -6,7 +6,7 @@
 /*   By: tvillare <tvillare@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/26 17:57:08 by tvillare          #+#    #+#             */
-/*   Updated: 2022/09/28 16:29:12 by tvillare         ###   ########.fr       */
+/*   Updated: 2022/10/02 16:28:23 by tvillare         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -74,16 +74,3 @@ char	**ft_split(char const *s, char c)
 	}
 	return (index);
 }
-/*
-int main()
-{
-	system("leaks -q a.out");
-	char **a;
-	char p[] = " Tripouille ";
-	a = ft_split(p, ' ');
-
-	printf("%s\n", p);
-	printf("\n/%s/", a[0]);
-	return (0);
-}
-*/

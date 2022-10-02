@@ -6,7 +6,7 @@
 /*   By: tvillare <tvillare@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/15 15:01:10 by tvillare          #+#    #+#             */
-/*   Updated: 2022/09/29 14:48:55 by tvillare         ###   ########.fr       */
+/*   Updated: 2022/10/02 16:28:28 by tvillare         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,18 +25,3 @@ char	*ft_strchr(const char *s, int c)
 	}
 	return ((char *)s + i);
 }
-/*
-char	*ft_strchr(const char *s, int c)
-{
-	char	*aux;
-
-	aux = (char *)s;
-	while (*aux != (unsigned char)c)
-	{
-		if (*aux == '\0')
-			return (0);
-		aux++;
-	}
-	return (aux);
-}
-*/

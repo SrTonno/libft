@@ -6,7 +6,7 @@
 /*   By: tvillare <tvillare@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/19 12:29:04 by tvillare          #+#    #+#             */
-/*   Updated: 2022/09/28 17:26:43 by tvillare         ###   ########.fr       */
+/*   Updated: 2022/10/02 16:36:52 by tvillare         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,17 +47,3 @@ void	*ft_memmove(void *dst, const void *src, size_t len)
 	}
 	return (dst);
 }
-/*
-#include <stdio.h>
-int main()
-{
-	char p[] = "HOLA";
-	char p2[] = "ADIOS";
-	char *retval;
-
-
-	retval = (char *)ft_memmove(p2, &p2[1], 2);
-	printf("-%s-%s-", p2, retval);
-	return(0);
- }
-*/
