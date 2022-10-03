@@ -55,7 +55,7 @@ $(NAME): $(TOTAL_OBJS)
 		 ${CC} ${CFLAGS} -c $< -o ${<:.c=.o} -I ${HDRS}
 
 ###############################################################################
-clean:
+clean:	bclean
 		${RM} ${OBJS}
 
 bclean:
